@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula V1 | Basketball Legends Script</title>
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+        }
 
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: var(--primary);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .btn-copy {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-discord {
+            background: #5865F2;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .status {
+            font-size: 0.8rem;
+            color: #10b981;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nebula V1</h1>
+        <p class="tagline">The ultimate Basketball Legends utility.</p>
+        
+        <div class="features">
+            <div class="feature-item">Auto Green</div>
+            <div class="feature-item">Auto Guard</div>
+            <div class="feature-item">ETC</div>
+            <div class="feature-item">Cframe Speed</div>
+            <div class="feature-item">Fluent UI</div>
+            <div class="feature-item">Keyless / Free</div>
+        </div>
+
+        <button class="btn btn-copy" onclick="copyScript()">Copy Script</button>
+        <a href="https://discord.gg/JGnkxBfNYs" class="btn btn-discord" target="_blank">Join Discord</a>
+
+        <div class="status">
+            <span class="dot"></span> Undetected & Active
+        </div>
+    </div>
+
+    <script>
+        function copyScript() {
+            const script = `loadstring(game:HttpGet("https://raw.githubusercontent.com/archdev-code/luminabb/main/script.lua"))()`;
+            navigator.clipboard.writeText(script);
+            alert("Script copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>
