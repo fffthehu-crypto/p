@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Hub | Premium Basketball Legends Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Money Hub | Premium Basketball Legends Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
     <style>
         :root {
             --primary: #c084fc;
@@ -26,7 +26,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(192, 132, 252, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
             color: var(--text);
@@ -35,6 +35,7 @@
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
+            position: relative;
         }
 
         .orb {
@@ -78,7 +79,7 @@
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--accent) 100%);
             -webkit-background-clip: text;
-            -webkit-fill-color: transparent;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
         }
@@ -117,6 +118,7 @@
             border: 1px solid var(--border);
             text-align: left;
             transition: 0.3s;
+            cursor: default;
         }
 
         .feature-card:hover {
@@ -153,6 +155,7 @@
             transition: 0.3s;
             overflow: hidden;
             border: none;
+            user-select: none;
         }
 
         .btn-main {
@@ -195,63 +198,68 @@
             border-radius: 0.5rem;
             font-size: 0.8rem;
             opacity: 0;
-            transition: 0.3s;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            user-select: none;
         }
     </style>
 </head>
 <body>
 
     <div class="orb"></div>
-    
-    <div class="container">
-        <div id="copyNotice" class="copy-success">Copied to Clipboard!</div>
-        
+
+    <div class="container" role="main" aria-label="Money Hub Interface">
+        <div id="copyNotice" class="copy-success" role="alert" aria-live="assertive">Copied to Clipboard!</div>
+
         <div class="logo-area">
-            <span class="badge">V2.0 Keyless</span>
-            <h1>LUMINA HUB</h1>
+            <span class="badge" aria-label="Version 2.0 Keyless">V2.0 Keyless</span>
+            <h1>MONEY HUB</h1>
             <p class="description">Experience the pinnacle of Basketball Legends automation with a sleek, high-performance interface.</p>
         </div>
 
-        <div class="feature-grid">
-            <div class="feature-card">
+        <section class="feature-grid" aria-label="Features">
+            <article class="feature-card" tabindex="0">
                 <h3>Elite Scoring</h3>
-                <p>Perfect Greens &Cframe Speed</p>
-            </div>
-            <div class="feature-card">
+                <p>Perfect Greens &amp; CFrame Speed</p>
+            </article>
+            <article class="feature-card" tabindex="0">
                 <h3>Smart Defense</h3>
-                <p>Auto Guard & Anti-Kick/Ban</p>
-            </div>
-            <div class="feature-card">
+                <p>Auto Guard &amp; Anti-Kick/Ban</p>
+            </article>
+            <article class="feature-card" tabindex="0">
                 <h3>Fluent UI</h3>
-                <p>Modern & Lightweight Design</p>
-            </div>
-            <div class="feature-card">
+                <p>Modern &amp; Lightweight Design</p>
+            </article>
+            <article class="feature-card" tabindex="0">
                 <h3>100% Free</h3>
                 <p>No Keys, No Ads, Just Play</p>
-            </div>
-        </div>
+            </article>
+        </section>
 
         <div class="actions">
-            <button class="btn btn-main" onclick="copyScript()">Copy Loadstring</button>
-            <a href="https://discord.gg/JGnkxBfNYs" class="btn btn-sub" target="_blank">Join the Community</a>
+            <button class="btn btn-main" onclick="copyScript()" aria-label="Copy loadstring to clipboard">Copy Loadstring</button>
+            <a href="https://discord.gg/JGnkxBfNYs" class="btn btn-sub" target="_blank" rel="noopener noreferrer" aria-label="Join the community Discord server">Join the Community</a>
         </div>
 
-        <div class="footer-info">
+        <footer class="footer-info" aria-label="Status information">
             <span>STABLE</span>
             <span>UNDETECTED</span>
             <span>GLOBAL</span>
-        </div>
+        </footer>
     </div>
 
     <script>
         function copyScript() {
-            const script = `loadstring(game:HttpGet("https://raw.githubusercontent.com/archdev-code/luminabb/main/script.lua"))() -- Lumina Hub`;
+            const script = `loadstring(game:HttpGet("https://raw.githubusercontent.com/archdev-code/luminabb/main/script.lua"))() -- Money Hub`;
             navigator.clipboard.writeText(script).then(() => {
                 const notice = document.getElementById('copyNotice');
                 notice.style.opacity = '1';
                 setTimeout(() => notice.style.opacity = '0', 2000);
+            }).catch(() => {
+                alert('Failed to copy to clipboard. Please copy manually.');
             });
         }
     </script>
+
 </body>
 </html>
