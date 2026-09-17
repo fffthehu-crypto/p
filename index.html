@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Money Hub | Script Loader</title>
+<title>Money Hub</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
@@ -166,7 +166,7 @@
   </section>
 
   <section id="script" class="tab-content" role="tabpanel" aria-labelledby="tab-script" tabindex="0" hidden>
-    <pre class="script-box">SCRIPT = loadstring(game:HttpGet("https://raw.githubusercontent.com/fffthehu-crypto/main.lua/main/script"))()</pre>
+    <pre class="script-box">loadstring(game:HttpGet("https://raw.githubusercontent.com/fffthehu-crypto/main.lua/main/script"))()</pre>
     <button class="btn-copy" onclick="copyScript()" aria-label="Copy script to clipboard">Copy Loadstring</button>
   </section>
 
@@ -201,7 +201,7 @@
   });
 
   function copyScript() {
-    const scriptText = 'SCRIPT = loadstring(game:HttpGet("https://raw.githubusercontent.com/fffthehu-crypto/main.lua/main/script"))()';
+    const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/fffthehu-crypto/main.lua/main/script"))()';
     navigator.clipboard.writeText(scriptText).then(() => {
       alert('Script copied to clipboard!');
     }).catch(() => {
